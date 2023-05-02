@@ -13,3 +13,12 @@ class Solution:
       #to discard the LSB and repeat the process until the input integer becomes 0, then return count
       n >> 1
     return count
+
+ 
+## easier way
+
+def hammingWeight(self, n: int) -> int:
+  #use the bin() function to convert the integer to its binary representation as a string, then we count 
+  #the number of 1 characters in the binary string
+  return bin(n).count('1')
+  
