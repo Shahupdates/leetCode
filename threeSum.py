@@ -25,11 +25,3 @@ class Solution:
     #return the result list if triplet is already in the result list
     return res
 
- 
-#O(n^2)
-  def threeSum(self, nums: List[int]) -> List[List[int]]:
-    nums.sort()
-    res = []
-    for i in range(len(nums)-2):
-      #skip duplicates of nums[i]
-      if i > 0 and nums[i] == nums[i-1]:
