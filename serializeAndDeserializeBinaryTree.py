@@ -12,28 +12,23 @@ class Codec:
     def serialize(self, root):
         #first checks if the current node is null and adds None to the serialized string if it is
         #if the node is not null, it adds the nodes value followed by the serialized format of its left and right children
-        """Encodes a tree to a single string.
-        
-        :type root: TreeNode
-        :rtype: str
-        """
-        
+        #Encodes a tree to a single string.
+
         if not root:
-            return: "None," #indicate null node with "None"
+            return "None," #indicate null node with "None"
 
         serialized = str(root.val) + ","
         serialized += self.serialize(root.left)
         serialized += self.serialize(root.right)
 
+        return serialized
+
     def deserialize(self, data):
         #this method takes the serialized string and recursively buidls the binary tree by first creating the root node
         #and then recursively creating its left and right children using the remaining elements in the list.
         #the method removes the processed elements from the list as it constructs the tree
-        """Decodes your encoded data to tree.
-        
-        :type data: str
-        :rtype: TreeNode
-        """
+        #decodes your encoded data to tree.
+
         def build_tree(vals):
             if vals[0] == "None":
                 vals.pop(0) #remove null node if so
