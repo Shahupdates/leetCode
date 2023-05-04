@@ -12,12 +12,11 @@ class Solution:
     Otherwise you continue iterating through the array until max_reach is less than the current index,
     in which case you can no longer reach the current end and you return "False"
     """
-        max_reach = 0
-        for i in range(nums.length):
-          if i > max_reach:
-            return False
-          max_reach = max(max_reach, i + nums[i])
-          if max_reach >= len(nums) - 1:
-            return True
-        return False
-  
+      max_reach = 0
+      for i in range(len(nums)):
+        if i > max_reach:
+          return False
+        max_reach = max(max_reach, i + nums[i])
+        if max_reach >= len(nums) - 1:
+          return True
+      return False
