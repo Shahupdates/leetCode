@@ -29,7 +29,7 @@ class Solution:
                 l2 = l2.next
             
             #a new node is created wtih the value carry % 10, this value represents the digit at the current position in the resulting linked list, this calculates the remainder when carry is divided by 10, if carry and the sum of l1 and l2's corresponding digits is 14, the remainder of 14 divided by 10 is 4. Therefore a new node with the value 4 is created and assigned to curr.next, this digit will be apart of the resulting linked list
-            curr.next = ListNode (Carry % 10)
+            curr.next = ListNode (carry % 10)
             #the curr node is moved to the next position, aka updated to point to the newly created node, this ensures that the next iteration of the while loop adds nodes to the correct position in the resulting linked list
             curr = curr.next
             #the carry value is updated by performing an integer divison by 10
