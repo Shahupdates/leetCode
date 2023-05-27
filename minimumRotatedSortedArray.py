@@ -35,22 +35,22 @@ is now 5, Range is sorted now, so we return the leftmost value.
 """
 
 class Solution:
-   def findMin(self, nums: List[int]) -> int:
-   res = nums[0]
-   l,r = 0, len(nums) - 1
-   
-   while l <= r:  #keep running our binary search while our left pointer is less than our right
-    if nums[l] < nums[r]:
-      res = min(res, nums[l])
-      break
+   def findMin(self, nums):
+    res = nums[0]
+    l,r = 0, len(nums) - 1
     
-    m = (l + r) // 2
-    res = min(res, nums[m]
-    if nums[m] >= nums[L]:
-      l = m + 1 #cross out 
-    else:
-      r = m - 1
-   return res
+    while l <= r:  #keep running our binary search while our left pointer is less than our right
+      if nums[l] < nums[r]:
+        res = min(res, nums[l])
+        break
+      
+      m = (l + r) // 2
+      res = min(res, nums[m])
+      if nums[m] >= nums[l]:
+        l = m + 1 #cross out 
+      else:
+        r = m - 1
+    return res
     
    
     
