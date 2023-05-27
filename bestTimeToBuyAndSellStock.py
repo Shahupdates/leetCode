@@ -1,6 +1,8 @@
-class Solution {
-    public int maxProfit(int[] prices) {
+class Solution(object):
+    def maxProfit(self, prices):
         """
+        :type prices: List[int]
+        :rtype: int
         You are given an array 'prices' where 'prices[i] is the price of a given stock on the i'th day.
         You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sel that stock.
         Return the maximum profit you can achieve from this transaction, if you cannot achieve any profit return 0.
@@ -10,13 +12,11 @@ class Solution {
 
         for price in prices:
           min_price = min(min_price, price)
-          max_profit = max(max_profit, price - min_profit)
+          max_profit = max(max_profit, price - min_price)
 
         return max_profit
 
-
-
-    }
+    
     """
     Example:
     Lets say we have an example prices array: 
@@ -31,5 +31,3 @@ class Solution {
     8. Return max_profit which is 5 in this case.
     9. If no profit i possible, function will return  0.
     """
-    
-}
